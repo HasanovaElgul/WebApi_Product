@@ -35,7 +35,6 @@ namespace WebAPI.Controllers
         {
             var data = _context.Products.FirstOrDefault(x => x.Id == id);
             return Ok(data);
-
         }
     }
 }
