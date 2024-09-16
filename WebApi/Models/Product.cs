@@ -1,6 +1,4 @@
-﻿
-
-namespace WebAPI.Models
+﻿namespace WebAPI.Models
 {
     public class Product                                      //доступность из любой части программы.
     {
@@ -10,6 +8,6 @@ namespace WebAPI.Models
         public string color { get; set; }
         public decimal Price { get; set; }
         public List<int> Sizes { get; set; }
-
+        public string Color { get; set; }
     }
 }
