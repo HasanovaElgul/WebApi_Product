@@ -42,6 +42,23 @@ namespace WebAPI.Controllers
         {
             return Ok();
         }
+
+        [HttpPatch]
+        public IActionResult Patch(Product product)
+        {
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Remove([FromRoute] int id)
+        {
+            var data = _context.Products.FirstOrDefault(x => x.Id == id);
+            if (data == null)
+                return NotFound("Tapilmadi");
+            _context.Products.Remove(data);     //eger tapildisa getsin bazadan remove etsin
+            _context.SaveChanges();
+            return Ok();
+        }
     }
 }
 
