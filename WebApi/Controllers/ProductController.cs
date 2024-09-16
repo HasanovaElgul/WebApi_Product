@@ -31,10 +31,16 @@ namespace WebAPI.Controllers
 
         }
         [HttpGet("GetById/{id}")]
-        public IActionResult Get([FromRoute]int id)
+        public IActionResult Get([FromRoute] int id)
         {
             var data = _context.Products.FirstOrDefault(x => x.Id == id);
             return Ok(data);
+        }
+
+        [HttpPut]
+        public IActionResult Put(Product product)
+        {
+            return Ok();
         }
     }
 }
